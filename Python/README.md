@@ -1,0 +1,1 @@
+This repository contains the notes of Python and DSA using python provided by IMCC College
