@@ -1,0 +1,65 @@
+# 1) Check if number is prime or not
+# def is_prime(num):
+#     if num < 2:
+#         return False
+#     for i in range(2,num):
+#         if num % i == 0:
+#             return False
+#         return True
+# num = int(input("Enter a number : "))
+# if(is_prime(num)):
+#     print(f"{num} is a prime number")
+# else:
+#     print(f"{num} is not a prime number")
+
+
+# 2) Sum of digits
+# def sum_of_digits(n):
+#     sum = 0
+#     rem = 0
+#     while(n>0):
+#         rem = n%10
+#         sum = sum + rem
+#         n = n//10
+#     return sum
+# n = int(input("Enter a number : "))
+# print(f"The sum of digits is {sum_of_digits(n)}")
+
+
+# 3) Check if the number is palindrome or not
+# def palindrome(n):
+#     sum = 0
+#     rem = 0
+#     temp = n
+#     while(n>0):
+#         rem = n%10
+#         sum = (sum * 10) + rem
+#         n = n//10
+#     if sum == temp:
+#         print(f"The number {temp} is a palindrome number")
+#     else:
+#         print(f"The number {temp} is not a palindrome number")
+# n = int(input("Enter a number : "))
+# palindrome(n)
+
+
+# 4) Pyramid pattern
+# def pyramid1(n):
+#     for i in range(1, n+1):
+#         for j in range(1, i+1):
+#             print("*", end=" ")
+#         print()
+# def pyramid2(n):
+#     for i in range(1, n+1):
+#         for j in range(1, i+1):
+#             print(chr(64 + j), end=" ")
+#         print()
+# def pyramid3(n):
+#     for i in range(n, 0, -1):
+#         for j in range(1, i+1):
+#             print("*", end=" ")
+#         print()
+# n = int(input("Enter a number : "))
+# pyramid1(n)
+# pyramid2(n)
+# pyramid3(n)
