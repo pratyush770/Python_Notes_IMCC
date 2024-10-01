@@ -63,3 +63,17 @@
 # pyramid1(n)
 # pyramid2(n)
 # pyramid3(n)
+
+
+# 5) Class and object practice
+# class Student:
+#     def __init__(self, rno, name):   # __init__ is a constructor in python
+#         self.rno = rno  # self is similar to 'this' operator which references the current object
+#         self.name = name
+#     def print(self):  # user-defined method
+#         print(f"The student roll number is {self.rno}")
+#         print(f"The student name is {self.name}")
+# s1 = Student(2401121,"Pratyush")
+# s1.print()
+
+
