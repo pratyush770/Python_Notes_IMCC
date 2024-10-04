@@ -1,7 +1,7 @@
 # Python Notes - IMCC
 
 # import sys
-import random as r
+# import random as r
 # print(sys.version)
 
 
@@ -95,9 +95,9 @@ import random as r
 # Practice Program
 # You are making a housie game app to generate random numbers. Write a python program to help you get these numbers
 # 6 times for a given housie ticket
-for i in range(6):  # 0,5 is the range
-    num = r.randint(1, 100)  # randint() generates random number between the specified range
-    print(num, end=' ')
+# for i in range(6):  # 0,5 is the range
+#     num = r.randint(1, 100)  # randint() generates random number between the specified range
+#     print(num, end=' ')
 
 
 # If-elif-else
