@@ -1,5 +1,7 @@
 # Python Notes - IMCC
+
 # import sys
+import random as r
 # print(sys.version)
 
 
@@ -48,3 +50,120 @@
 # print(f"The first number is {num1}")  # will execute since these variables are global
 # print(f"The second number is {num2}")
 # print(f"The addition of both the numbers is {sumadd}")
+
+
+# String literal and type_casting
+# 1) x = 10
+# st1 = 'Allowed'  # string value in single quotes
+# _st2 = "allowed"  # string value in double quotes
+# ST1 = "Case Sensitive"  # ST1 is different from st1
+# print(f"Value of x is {x}")
+# print(f"Value of st1 is {st1}")
+# print(f"Value of _st2 is {_st2}")
+# print(f"Value of ST1 is {ST1}")
+# x = "reassignment"  # operator overloading
+# print(f"Reassigned value is {x}")
+
+# 2) y = 10
+# val_int = int(y)  # type_cast to int
+# val_float = float(y)  # type_cast to float
+# val_str = str(y)  # type_cast to string
+# print(f"The value of val_int is {val_int}")
+# print(f"The value of val_float is {val_float}")
+# print(f"The value of val_str is {val_str}")
+
+# 3) v1, v2, v3 = 10.00, 20.50, 12.75
+# sum = v1 + v2 + v3
+# print(f"The sum of all the variables is {sum}")  # format method
+# print(type(sum))  # provides the variable data type
+
+# 4) num1 = 20
+# num2 = 30
+# st1 = "Hello"
+# st2 = "World"
+# print(num1)  # 20
+# print(num2)  # 30
+# print(num1 + num2)  # 50 i.e. addition operation(int + int)
+# print(st1)  # Hello
+# print(st2)  # World
+# print(st1 + st2)  # HelloWorld i.e. concatenation(str + str)
+# print(st1, st2)  # Hello, World
+# print(num1, st1)  # 20, Hello
+# print(num1 + st1)  # Will throw error since int + str is not possible
+
+
+# Practice Program
+# You are making a housie game app to generate random numbers. Write a python program to help you get these numbers
+# 6 times for a given housie ticket
+for i in range(6):  # 0,5 is the range
+    num = r.randint(1, 100)  # randint() generates random number between the specified range
+    print(num, end=' ')
+
+
+# If-elif-else
+# 1) age = int(input("Enter your age : "))
+# if age < 18:
+#     print("You are not an adult yet")
+# elif age == 18:
+#     print("Just 18!")
+# else:
+#     print("Legally adult")
+
+# 2) age = int(input("Enter your age : "))
+# print("You are not an adult yet" if age < 18 else "Just 18!" if age == 18 else "Legally adult")  # ternary operator
+
+
+# Switch control(match)
+# day = input("Enter the day of the week : ")
+# day = day.lower()
+# match day:  # match keyword is similar to switch keyword in other programming languages
+#     case 'monday' | 'mon':
+#         print("Monday")
+#     case 'tuesday' | 'tue':
+#         print("Tuesday")
+#     case 'wednesday' | 'wed':
+#         print("Wednesday")
+#     case 'thursday' | 'thu':
+#         print("Thursday")
+#     case 'friday' | 'fri':
+#         print("Friday")
+#     case 'saturday' | 'sat':
+#         print("Saturday")
+#     case 'sunday' | 'sun':
+#         print("Sunday")
+#     case _:  # for default case, will always come at the end
+#         print("Enter a valid day of the week")
+
+
+# Loops in python
+# while(True):  # infinite loop
+#     num = int(input("Enter a number : "))
+#     if num % 2 == 0:
+#         print(f"The entered number {num} is an even number")
+#         continue
+#     else:
+#         print(f"The entered number {num} is an odd number")
+#         break
+# print("This line will execute only if the entered number is odd")
+
+
+# Practice Program
+# val = int(input("Enter the number : "))
+# primeSt = False
+# for i in range(2, (val//2)+1):
+#     if val % i == 0:
+#         break
+#     else:
+#         primeSt = True
+# if(primeSt):
+#     print(f"The entered number {val} is a prime number")
+# else:
+#     print(f"The entered number {val} is not a prime number")
+
+
+
+
+
+
+
+
