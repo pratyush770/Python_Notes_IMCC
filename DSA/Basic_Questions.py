@@ -59,10 +59,35 @@
 #         for j in range(1, i+1):
 #             print("*", end=" ")
 #         print()
+# def pyramid4(n):
+#     for i in range(1, n+1):   # row will increment
+#         for j in range(i, 0, -1):   # columns value will decrement
+#             print(j, end=" ")
+#         print()
+# def pyramid5(n):
+#     for i in range(1, n+1):
+#         for j in range(1, i+1):
+#             print("*", end=" ")
+#         print()
+#     for i in range(n-1, 0, -1):
+#         for j in range(1, i+1):
+#             print("*", end=" ")
+#         print()
+# def pyramid6(n):
+#     space = 0
+#     for i in range(n, 0, -2):
+#         print(" " * space, end = '')   # for inserting spaces
+#         for j in range(1, i+1):
+#             print(j, end=" ")
+#         print()
+#         space += 1   # increase number of spaces by 1 for each row
 # n = int(input("Enter a number : "))
 # pyramid1(n)
 # pyramid2(n)
 # pyramid3(n)
+# pyramid4(n)
+# pyramid5(n)
+# pyramid6(n)
 
 
 # 5) Class and object practice
