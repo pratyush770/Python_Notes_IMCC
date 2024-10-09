@@ -2,7 +2,7 @@
 # Each node of a linked_list can store an element called a 'Data'
 # A link or pointer to the next link is called 'Next'
 # A linked_list contains the link to the first node called 'Head'
-import Node as n
+from DSA.Linear_Data_Structures.Linked_List import Node as n
 class Singly_Linked_List:
     def __init__(self):
         self.head = None  # assign 'head' as null initially
@@ -69,7 +69,19 @@ class Singly_Linked_List:
         print(f"The minimum element in the singly linked list is {min}")
         print(f"The maximum element in the singly linked list is {max}")
 
-
+    def reverse(self):
+        temp = self.head
+        prev = None
+        # traverse all nodes of singly linked list
+        while temp:
+            next_node = temp.next
+            # reverse current node's next pointer
+            temp.next = prev
+            # move pointers one position ahead
+            prev = temp
+            temp = next_node
+        # return the head of the reversed linked list
+        return prev
 
 ll = Singly_Linked_List()
 n1 = n.Node(10)
@@ -89,3 +101,6 @@ ll.delete(15)
 ll.print()
 print()
 ll.count_min_max()
+print()
+ll.head = ll.reverse()  # will return head value and while loop will execute every time, thus reversing the entire ll
+ll.print()

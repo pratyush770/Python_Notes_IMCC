@@ -7,3 +7,4 @@ class Node:
     def __init__(self, data):
         self.data = data  # for assigning the data
         self.next = None  # assign 'next' as null initially
+        self.prev = None  # required for doubly linked list
