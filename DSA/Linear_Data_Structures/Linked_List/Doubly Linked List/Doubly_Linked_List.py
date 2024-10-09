@@ -42,6 +42,9 @@ class Doubly_Linked_List:
                 else:  # keep traversing
                     temp = temp.next
                     count += 1
+                if temp == None:  # element not found in the doubly linked list
+                    print("Please enter a valid position")
+                    return
 
     def delete(self, value):  # method to delete a specific element from the doubly linked list
         temp = self.head  # points to the 1st node
@@ -54,7 +57,7 @@ class Doubly_Linked_List:
                     break
                 temp = temp.next  # go to the next element
                 if temp == None:  # element not found in the doubly linked list
-                    print("Node is not present in the singly linked list")
+                    print("Node is not present in the doubly linked list")
                     return
                 temp.prev.next = temp.next  # create link between previous and next node
                 if temp.next:  # will work only for position 2 till second last node and will skip the last node
@@ -101,7 +104,7 @@ ll.append(n3)
 ll.append(n4)
 ll.print()
 print()
-ll.insert(n.Node(15), 2)
+ll.insert(n.Node(15), 8)
 ll.print()
 print()
 ll.delete(15)
