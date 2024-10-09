@@ -37,6 +37,9 @@ class Singly_Linked_List:
                 else:  # keep traversing
                     temp = temp.next
                     count += 1
+                if temp == None:  # element not found in the singly linked list
+                    print("Please enter a valid position")
+                    return
 
     def delete(self, value):  # method to delete a specific element from the singly linked list
         temp = self.head  # points to the 1st node
