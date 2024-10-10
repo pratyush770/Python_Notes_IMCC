@@ -161,7 +161,35 @@
 #     print(f"The entered number {val} is not a prime number")
 
 
+# File Handling
+# 1) Read operations in file
+# f = open('file.txt')  # default mode is 'r'
+# print(f.read())  # read method is used to display the contents of the file
+# print(f.read(10))  # will read only first 10 characters
+# print(f.tell())  # method to get the file pointer's current position
+# f.seek(22)  # method to move the file pointer to a specific position
+# print(f.read())
+# print(f.readline())  # will only read the first line
+# print(f.readlines())  # will read all the lines and display in the form of a list
+# Alternative way to print all the lines instead of readlines()
+# f.seek(0)
+# for line in f:
+#     print(line)
 
+# 2) Write operations in file
+# f = open('file.txt', 'w')  # will open in 'w' mode
+# f.write('The first line got overwritten\n')  # will overwrite the content
+# f.write('The second line got overwritten')
+# f.writelines(['The first line got overwritten\n', 'The second line got overwritten'])  # writes multiple lines and expects the data in the form of a list
+# f.close()
+# f = open('file.txt')
+# print(f.read())
+
+# 3) f = open('file.txt', 'a')  # will open in 'a' mode
+# f.write('This line gets appended')  # appends the text in front of the already existing text
+# f.close()
+# f = open('file.txt')
+# print(f.read())
 
 
 
