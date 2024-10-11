@@ -204,3 +204,26 @@
 # print(rainfallData[4][0], rainfallData[4][1], rainfallData[4][2])
 
 
+# Dictionary
+# myDictionary = {1: "Apple", 2: "Cherry", 3: "Banana", 4: "Peach"}
+# print(myDictionary)
+# print(f"The length of the dictionary is {len(myDictionary)}")
+# studentRecord = {"name": "ABC",
+#                  "age": 20,
+#                  "contactNumbers": [123456, 987653],
+#                  "blood_type": "B+"}
+# print(studentRecord)
+# print(studentRecord["name"])
+# print(studentRecord["contactNumbers"])
+# print(type(studentRecord))
+# studentRecord = {"name": "ABC",
+#                  "age": 20,
+#                  "contactNumbers": [123456, 987653]}
+# oneMoreStudentRecord = studentRecord  # copy of above dictionary
+# print(f"The new dictionary looks like: {oneMoreStudentRecord}")
+# studentRecord.update({"address": "Mumbai"})
+# print(f"Modified studentRecord dictionary looks like: {studentRecord}")
+# print(f"The new dictionary looks like: {oneMoreStudentRecord}")   # this copy dictionary gets updated too
+
+
+
