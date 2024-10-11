@@ -192,6 +192,15 @@
 # print(f.read())
 
 
-
+# List
+# monthNames = list(("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"))
+# n = int(input("Enter any number between 1 to 12: "))
+# print("The month corresponding to the given number is:", monthNames[n - 1])  # n - 1 since indexing starts from 0
+# daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+# print(daysOfWeek[:3])  # will display the list elements from 0:2 i.e. Mon, Tue, Wed
+# daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+# print(daysOfWeek[3:])  # will display the list elements from 3:end i.e. Thu, Fri, Sat, Sun
+# rainfallData = [[1, "Arunachal Pradesh", 5], [2, "Sikkim", 1], [3, "West Bengal", 4], [4, "Odisha", 2], [5, "Uttarakhand", 3]]  # Multi dimensional list
+# print(rainfallData[4][0], rainfallData[4][1], rainfallData[4][2])
 
 

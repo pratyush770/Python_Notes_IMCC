@@ -64,21 +64,6 @@ class Doubly_Linked_List:
                     temp.next.prev = temp
         temp = None  # for deleting the node
 
-    def count_min_max(self):  # method to get the count, min and max element in the doubly linked list
-        temp = self.head
-        count = 0
-        min, max = temp.data, temp.data  # min and max will point to the first node data
-        while temp:
-            count += 1
-            if temp.data < min:
-                min = temp.data
-            if temp.data > max:
-                max = temp.data
-            temp = temp.next
-        print(f"The count of nodes in the singly linked list is {count}")
-        print(f"The minimum element in the singly linked list is {min}")
-        print(f"The maximum element in the singly linked list is {max}")
-
     def reverse(self):
         temp = self.head
         prev = None
@@ -104,13 +89,11 @@ ll.append(n3)
 ll.append(n4)
 ll.print()
 print()
-ll.insert(n.Node(15), 8)
+ll.insert(n.Node(15), 2)
 ll.print()
 print()
 ll.delete(15)
 ll.print()
-# print()
-# ll.count_min_max()
-# print()
-# ll.head = ll.reverse()  # will return head value and while loop will execute every time, thus reversing the entire ll
-# ll.print()
+print()
+ll.head = ll.reverse()  # will return head value and while loop will execute every time, thus reversing the entire ll
+ll.print()

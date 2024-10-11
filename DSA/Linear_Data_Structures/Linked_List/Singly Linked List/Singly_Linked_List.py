@@ -54,6 +54,7 @@ class Singly_Linked_List:
                 if temp == None:  # element not found in the singly linked list
                     print("Node is not present in the singly linked list")
                     return
+            if temp:
                 prev.next = temp.next  # create link between previous and next node
         temp = None  # for deleting the node
 
@@ -77,7 +78,7 @@ class Singly_Linked_List:
         prev = None
         # traverse all nodes of singly linked list
         while temp:
-            next_node = temp.next
+            next_node = temp.next  # initially store the node value before reversing
             # reverse current node's next pointer
             temp.next = prev
             # move pointers one position ahead
@@ -97,7 +98,7 @@ ll.append(n3)
 ll.append(n4)
 ll.print()
 print()
-ll.insert(n.Node(15),2)
+ll.insert(n.Node(15), 2)
 ll.print()
 print()
 ll.delete(15)
