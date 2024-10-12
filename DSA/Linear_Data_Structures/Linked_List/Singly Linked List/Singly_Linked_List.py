@@ -84,8 +84,7 @@ class Singly_Linked_List:
             # move pointers one position ahead
             prev = temp
             temp = next_node
-        # return the head of the reversed linked list
-        return prev
+        self.head = prev  # update the head to the prev which is the last value after iteration
 
 ll = Singly_Linked_List()
 n1 = n.Node(10)
@@ -106,5 +105,5 @@ ll.print()
 print()
 ll.count_min_max()
 print()
-ll.head = ll.reverse()  # will return head value and while loop will execute every time, thus reversing the entire ll
+ll.reverse()
 ll.print()

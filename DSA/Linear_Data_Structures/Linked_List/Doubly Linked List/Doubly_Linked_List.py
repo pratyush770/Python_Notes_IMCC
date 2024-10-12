@@ -67,16 +67,16 @@ class Doubly_Linked_List:
     def reverse(self):
         temp = self.head
         prev = None
-        # traverse all nodes of doubly linked list
+        # traverse all nodes of singly linked list
         while temp:
-            next_node = temp.next
-            # reverse current node's next pointer
+            next_node = temp.next  # initially store the node value before reversing
+            # reverse current node's next and prev pointer
             temp.next = prev
+            temp.prev = next_node
             # move pointers one position ahead
             prev = temp
             temp = next_node
-        # return the head of the reversed doubly linked list
-        return prev
+        self.head = prev  # update the head to the prev which is the last value after iteration
 
 ll = Doubly_Linked_List()
 n1 = n.Node(10)
@@ -95,5 +95,5 @@ print()
 ll.delete(15)
 ll.print()
 print()
-ll.head = ll.reverse()  # will return head value and while loop will execute every time, thus reversing the entire ll
+ll.reverse()
 ll.print()
