@@ -1,13 +1,11 @@
-# Every element in linked_list is known as 'Node'
-# Each node of a linked_list can store an element called a 'Data'
-# A link or pointer to the next link is called 'Next'
-# A linked_list contains the link to the first node called 'Head'
 from DSA.Linear_Data_Structures.Linked_List import Node as n
-class Doubly_Linked_List:
+
+
+class DoublyLinkedList:
     def __init__(self):
         self.head = None  # assign 'head' as null initially
 
-    def append(self, node_value):  # method to append elements at end of doubly linked list
+    def create(self, node_value):  # method to append elements at end of doubly linked list
         temp = self.head  # points to 1st node
         if temp:
             while temp.next:  # find last node
@@ -16,12 +14,6 @@ class Doubly_Linked_List:
             node_value.prev = temp
         else:
             self.head = node_value  # add first node to the doubly linked list
-
-    def print(self):  # method to print elements of doubly linked list
-        temp = self.head
-        while temp:
-            print(temp.data)
-            temp = temp.next
 
     def insert(self, node_value, pos):  # method to insert element at specified position
         temp = self.head
@@ -37,12 +29,13 @@ class Doubly_Linked_List:
                     node_value.prev = temp
                     if temp.next:  # will work only for position 2 till second last node and will skip the last node
                         temp.next.prev = node_value
-                    temp.next = node_value  # we cannot write this line before the above 2 lines since we are updating the prev value of temp
+                    temp.next = node_value
+                    # we cannot write this line before the above 2 lines since we are updating the prev value of temp
                     return
                 else:  # keep traversing
                     temp = temp.next
                     count += 1
-                if temp == None:  # element not found in the doubly linked list
+                if temp is None:  # element not found in the doubly linked list
                     print("Please enter a valid position")
                     return
 
@@ -56,18 +49,23 @@ class Doubly_Linked_List:
                 if temp.data == value:  # if node is found
                     break
                 temp = temp.next  # go to the next element
-                if temp == None:  # element not found in the doubly linked list
+                if temp is None:  # element not found in the doubly linked list
                     print("Node is not present in the doubly linked list")
                     return
                 temp.prev.next = temp.next  # create link between previous and next node
                 if temp.next:  # will work only for position 2 till second last node and will skip the last node
                     temp.next.prev = temp
-        temp = None  # for deleting the node
+
+    def print(self):  # method to print elements of doubly linked list
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
 
     def reverse(self):
         temp = self.head
         prev = None
-        # traverse all nodes of singly linked list
+        # traverse all nodes of doubly linked list
         while temp:
             next_node = temp.next  # initially store the node value before reversing
             # reverse current node's next and prev pointer
@@ -78,15 +76,16 @@ class Doubly_Linked_List:
             temp = next_node
         self.head = prev  # update the head to the prev which is the last value after iteration
 
-ll = Doubly_Linked_List()
+
+ll = DoublyLinkedList()
 n1 = n.Node(10)
 n2 = n.Node(20)
 n3 = n.Node(30)
 n4 = n.Node(40)
-ll.append(n1)
-ll.append(n2)
-ll.append(n3)
-ll.append(n4)
+ll.create(n1)
+ll.create(n2)
+ll.create(n3)
+ll.create(n4)
 ll.print()
 print()
 ll.insert(n.Node(15), 2)
