@@ -254,7 +254,17 @@
 # eightTuple = tuple(range(10, 0, -1))  # will print the numbers from 10-1 in form of a tuple
 # print(f"Ninth tuple {eightTuple}")
 
-
+# Unpacking tuples in a variable
+student = ("ABC", 24, "Mumbai")
+print(f"Student tuple looks like this {student}")
+name, age, city = student  # unpacking student tuple
+print(f"The name of the students is {name}, age is {age} and city is {city}")
+# Use of asterisk in unpacking a tuple
+one, two, *other, three = (1, 2, 3, 4, 5)
+print(f"One: {one}")
+print(f"Two: {two}")
+print(f"Three: {three}")
+print(f"All: {other}")
 
 
 
