@@ -1,4 +1,5 @@
 # Python Notes - IMCC
+# *** Syntax error will not execute the program whereas Logical error will execute but will show incorrect output ***
 
 # import sys
 # import random as r
@@ -224,6 +225,36 @@
 # studentRecord.update({"address": "Mumbai"})
 # print(f"Modified studentRecord dictionary looks like: {studentRecord}")
 # print(f"The new dictionary looks like: {oneMoreStudentRecord}")   # this copy dictionary gets updated too
+
+
+# Tuples
+# myTuple = ("Pratyush", )  # one element with comma indicates a tuple
+# print(type(myTuple))
+# firstTuple = ()  # empty tuple
+# print('First tuple', firstTuple)
+# print(type(firstTuple))
+# secondTuple = ("mon", "tue", "wed", "thu")  # string elements
+# print("Second tuple", secondTuple)
+# print(type(secondTuple))
+# thirdTuple = (1, 2, 3)  # int elements
+# print(f"Third tuple {thirdTuple}")
+# print(type(thirdTuple))
+# fourthTuple = ("fri", "sat", "sun")  # string elements
+# print(f"Fourth tuple {fourthTuple}")
+# print(type(fourthTuple))
+# fifthTuple = (secondTuple, thirdTuple)  # nested tuple and allows heterogeneous elements
+# print(f"Fifth tuple {fifthTuple}")
+# print(type(fifthTuple))
+# myList = [10, 20, 30]
+# sixthTuple = tuple(myList)  # adding the list as an element to the tuple
+# print(f"Sixth tuple {sixthTuple}")
+# seventhTuple = (90)  # is considered an int not as a tuple. It is a logical error since the code will work.
+# print(f"Eighth tuple {seventhTuple}")
+# print(type(seventhTuple))
+# eightTuple = tuple(range(10, 0, -1))  # will print the numbers from 10-1 in form of a tuple
+# print(f"Ninth tuple {eightTuple}")
+
+
 
 
 
