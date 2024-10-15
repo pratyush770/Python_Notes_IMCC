@@ -50,5 +50,6 @@ st.pop()
 st.print()
 print()
 st.reverse()
+print()
 
 
