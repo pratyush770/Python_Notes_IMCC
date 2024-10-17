@@ -1,4 +1,4 @@
-from DSA.Linear_Data_Structures.Linked_List import Node as n
+import Node as n
 
 
 class SinglyLinkedList:
@@ -53,7 +53,7 @@ class SinglyLinkedList:
     def print(self):  # method to print elements of singly linked list
         temp = self.head
         while temp:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
 
     def reverse(self):
@@ -101,14 +101,18 @@ ll.create(n3)
 ll.create(n4)
 ll.print()
 print()
+print()
 ll.insert(n.Node(15), 2)
 ll.print()
+print()
 print()
 ll.delete(15)
 ll.print()
 print()
+print()
 ll.reverse()
 ll.print()
+print()
 print()
 ll.count()
 print()

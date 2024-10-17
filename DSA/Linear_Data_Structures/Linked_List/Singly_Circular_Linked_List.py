@@ -1,4 +1,4 @@
-from DSA.Linear_Data_Structures.Linked_List import Node as n
+import Node as n
 
 
 class SinglyCircularLinkedList:
@@ -40,7 +40,7 @@ class SinglyCircularLinkedList:
     def print(self):  # method to print elements of singly linked list
         temp = self.head
         while temp.next != self.head:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
         print(temp.data)  # for last node
 

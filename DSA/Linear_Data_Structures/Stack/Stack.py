@@ -22,7 +22,7 @@ class Stack:
         temp = self.top
         print("The stack elements are...")
         while temp:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
 
     def reverse(self):
@@ -46,8 +46,10 @@ st.push(n3)
 st.push(n4)
 st.print()
 print()
+print()
 st.pop()
 st.print()
+print()
 print()
 st.reverse()
 print()

@@ -1,38 +1,30 @@
-from DSA.Linear_Data_Structures.Linked_List import Node as n
+import Node as n
 
 
-class DoublyCircularLinkedList:
+class DoublyLinkedList:
     def __init__(self):
         self.head = None  # assign 'head' as null initially
 
-    def create(self, node_value):  # method to append elements at end of doubly circular linked list
+    def create(self, node_value):  # method to append elements at end of doubly linked list
         temp = self.head  # points to 1st node
         if temp:
-            while temp.next != self.head:  # find last node
+            while temp.next:  # find last node
                 temp = temp.next
             temp.next = node_value  # appending new node
             node_value.prev = temp
-            node_value.next = self.head
-            self.head.prev = node_value
         else:
-            self.head = node_value  # add first node to the doubly circular linked list
-            node_value.next = self.head
-            node_value.prev = self.head
+            self.head = node_value  # add first node to the doubly linked list
 
     def insert(self, node_value, pos):  # method to insert element at specified position
         temp = self.head
         count = 1
         if pos == 1:
-            while temp.next != self.head:
-                temp = temp.next
             node_value.next = self.head
             self.head.prev = node_value
-            node_value.prev = temp
-            temp.next = node_value
             self.head = node_value  # making new_node as head
         else:
             while temp:
-                if count+1 == pos:  # to stop the doubly circular linked list at 1 node before
+                if count+1 == pos:  # to stop the doubly linked list at 1 node before
                     node_value.next = temp.next
                     node_value.prev = temp
                     if temp.next:  # will work only for position 2 till second last node and will skip the last node
@@ -43,40 +35,49 @@ class DoublyCircularLinkedList:
                 else:  # keep traversing
                     temp = temp.next
                     count += 1
-                if temp is None:  # element not found in the doubly circular linked list
+                if temp is None:  # element not found in the doubly linked list
                     print("Please enter a valid position")
                     return
 
-    def delete(self, value):  # method to delete a specific element from the doubly circular linked list
+    def delete(self, value):  # method to delete a specific element from the doubly linked list
         temp = self.head  # points to the 1st node
-        temp1 = self.head  # extra pointer to traverse the list and find the last node
         if temp.data == value:  # node at 1st position
-            while temp1.next != self.head:
-                temp1 = temp1.next
             self.head = temp.next
-            self.head.prev = temp1
-            temp1.next = self.head
+            temp.next.prev = None  # we make prev as None, so it will not point to any node thus deleting the 1st node
         else:  # for deleting the node other than 1st position
-            while True:
+            while temp:
                 if temp.data == value:  # if node is found
                     break
                 temp = temp.next  # go to the next element
-                if temp == self.head:  # element not found in the doubly circular linked list
+                if temp is None:  # element not found in the doubly linked list
                     print("Node is not present in the doubly linked list")
                     return
-            temp.prev.next = temp.next  # create link between previous and next node
-            if temp.next:  # will work only for position 2 till second last node and will skip the last node
-                temp.next.prev = temp.prev
+                temp.prev.next = temp.next  # create link between previous and next node
+                if temp.next:  # will work only for position 2 till second last node and will skip the last node
+                    temp.next.prev = temp
 
-    def print(self):  # method to print elements of doubly circular linked list
+    def print(self):  # method to print elements of doubly linked list
         temp = self.head
-        while temp.next != self.head:
-            print(temp.data)
+        while temp:
+            print(temp.data, end=" ")
             temp = temp.next
-        print(temp.data)
+
+    def reverse(self):
+        temp = self.head
+        prev = None
+        # traverse all nodes of doubly linked list
+        while temp:
+            next_node = temp.next  # initially store the node value before reversing
+            # reverse current node's next and prev pointer
+            temp.next = prev
+            temp.prev = next_node
+            # move pointers one position ahead
+            prev = temp
+            temp = next_node
+        self.head = prev  # update the head to the prev which is the last value after iteration
 
 
-ll = DoublyCircularLinkedList()
+ll = DoublyLinkedList()
 n1 = n.Node(10)
 n2 = n.Node(20)
 n3 = n.Node(30)
@@ -87,8 +88,14 @@ ll.create(n3)
 ll.create(n4)
 ll.print()
 print()
+print()
 ll.insert(n.Node(15), 2)
 ll.print()
 print()
-ll.delete(10)
+print()
+ll.delete(15)
+ll.print()
+print()
+print()
+ll.reverse()
 ll.print()
