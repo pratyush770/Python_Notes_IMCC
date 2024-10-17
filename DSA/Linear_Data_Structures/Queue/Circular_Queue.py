@@ -25,9 +25,11 @@ class CircularQueue:
         if self.rear is not None:
             temp = self.front
             print(f"The deleted node is {temp.data}")
-            self.front = self.front.next
-            if self.front is None:  # for deleting last node in queue
-                self.rear = None
+            self.front = self.front.next  # front gets updated
+            if self.front == self.rear:  # for deleting last node in queue
+                self.front = self.rear = None
+            else:
+                self.rear.next = self.front  # rear points to update front
             del temp
         else:
             print("Queue is empty")
@@ -42,5 +44,7 @@ q1.enqueue(n2)
 q1.enqueue(n3)
 q1.print()
 print()
-# q1.dequeue()
-# q1.print()
+q1.dequeue()
+q1.print()
+
+
