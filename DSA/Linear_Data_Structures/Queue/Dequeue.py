@@ -23,6 +23,26 @@ class DeQueue:
             temp = temp.next
         print()
 
+    def dequeue(self, ch):
+        if self.rear:
+            temp = self.front
+            if self.front == self.rear:  # if only 1 node is present
+                print(f"The deleted node is {temp.data}")
+                self.front = self.rear = None
+                del temp
+                return
+            if ch == 'f':  # for deleting node from front
+                print(f"The deleted node is {self.front.data}")
+                self.front = self.front.next
+            else:  # for deleting node from rear
+                while temp.next != self.rear:  # find last node
+                    temp = temp.next
+                temp.next = self.rear.next
+                self.rear = temp
+            del temp
+        else:
+            print("Queue is empty")
+
 
 q1 = DeQueue()
 n1 = n.Node(10)
@@ -33,6 +53,6 @@ q1.enqueue(n2, 'r')
 q1.enqueue(n3, 'f')
 q1.print()
 print()
-# q1.dequeue('r')
-# q1.print()
+q1.dequeue('r')
+q1.print()
 
