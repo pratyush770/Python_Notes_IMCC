@@ -15,6 +15,9 @@ class CircularQueue:
         return
 
     def print(self):
+        if self.front is None:  # if queue is empty
+            print("Queue is empty")
+            return
         temp = self.front
         while temp.next != self.front:
             print(temp.data, end=" ")
@@ -22,17 +25,17 @@ class CircularQueue:
         print(temp.data)  # for printing last node
 
     def dequeue(self):  # for deleting node in queue
-        if self.rear is not None:
-            temp = self.front
-            print(f"The deleted node is {temp.data}")
-            self.front = self.front.next  # front gets updated
-            if self.front == self.rear:  # for deleting last node in queue
-                self.front = self.rear = None
-            else:
-                self.rear.next = self.front  # rear points to update front
-            del temp
-        else:
+        if self.rear is None:
             print("Queue is empty")
+            return
+        temp = self.front
+        print(f"The deleted node is {temp.data}")
+        if self.front == self.rear:  # for deleting last node in queue
+            self.front = self.rear = None
+        else:
+            self.front = self.front.next
+            self.rear.next = self.front  # rear points to update front
+        del temp
 
 
 q1 = CircularQueue()
@@ -44,6 +47,10 @@ q1.enqueue(n2)
 q1.enqueue(n3)
 q1.print()
 print()
+q1.dequeue()
+q1.print()
+q1.dequeue()
+q1.print()
 q1.dequeue()
 q1.print()
 
