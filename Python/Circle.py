@@ -3,8 +3,8 @@ import math
 
 
 class Circle:
-    _radius = 0.0
-    area = 0.0
+    _radius = 0.0  # private variable
+    area = 0.0  # public variable
 
     def __init__(self, radius):
         self.setradius(radius)  # calling getter and setter
