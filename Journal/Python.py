@@ -67,3 +67,51 @@
 #
 # n = int(input("Enter a number: "))   # takes input from the user
 # armstrong(n)  # function call
+
+# 6) Without using readline() demonstrate a way in Python to read a multiline file line by line
+# def readlines(file):
+#     f = open(file)  # opens the specified file in 'r' mode which is default mode
+#     f.seek(0)  # starts the file pointer from 0
+#     print(f"The contents of {file} are...")
+#     for i in f:
+#         print(i)  # prints the contents line by line
+#
+#
+# fname = input("Enter the file name: ")
+# readlines(fname)
+
+# 7) Using readlines() demonstrate a way to return the total number of NON BLANK lines in a file
+# def nonblanklines(file):
+#     f = open(file)
+#     lines = f.readlines()  # reads all the lines from the specified file
+#     count = 0
+#     for i in lines:
+#         if i.strip():  # removes extra whitespaces thus returning only non-blank lines
+#             count += 1
+#     print(f"The number of non blank lines in {file} is {count}")
+#
+#
+# fname = input("Enter the file name: ")
+# nonblanklines(fname)
+
+# 8) Using file writing methods, write a message from the user in a file. Show use of write when the file is in 'w' mode and 'a' mode
+# def writeread(file, msg, ap_msg):
+#     f = open(file, 'w')  # opens the specified file in 'w' mode
+#     f.write(msg)  # writes the user defined message in the file
+#     print("Content written successfully...")
+#     f = open(file)
+#     print(f.read())  # prints the contents of file after writing
+#     print()
+#     f = open(file, 'a')  # opens the specified file in 'a' mode
+#     f.write(ap_msg)
+#     print("Content appended successfully...")
+#     f = open(file)
+#     print(f.read())
+#
+#
+# fname = input("Enter the file name: ")
+# message = input("Enter the message to write in file: ")
+# append_msg = input("Enter the message to append after writing: ")
+# writeread(fname, message, append_msg)
+
+
