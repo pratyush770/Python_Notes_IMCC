@@ -25,6 +25,6 @@
 # maharashtra.describestate()
 
 
-# Getter and setter in python
-# If there are values which are mutating, then we make them private and access them through getters and setters.
+
+
 

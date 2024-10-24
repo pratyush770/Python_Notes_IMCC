@@ -1,4 +1,5 @@
 # Getter and Setter demonstration for Chapter 2.py
+# If there are values which are mutating, then we make them private and access them through getters and setters.
 import math
 
 
