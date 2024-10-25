@@ -14,7 +14,6 @@ def calculateFactorial(num):  # method to calculate the factorial of a number
 def armstrongCheck(num):  # method to check if the number is armstrong or not
     temp = num  # temporary variable which holds same value as the entered input
     sum = 0
-    rem = 0
     while num > 0:
         rem = num % 10
         sum = sum + (rem * rem * rem)
