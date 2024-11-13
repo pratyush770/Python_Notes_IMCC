@@ -61,6 +61,30 @@ class BinarySearchTree:
                 print(f"{val} does not exist")
                 return
 
+    def count_nodes(self):
+        count = 1
+        if self.left:
+            count += self.left.count_nodes()  # increment count every time new function is called
+        if self.right:
+            count += self.right.count_nodes()
+        return count
+
+    def min_max(self):
+        minimum = maximum = self.data
+        if self.left:
+            left_min, left_max = self.left.min_max()
+            if left_min < minimum:   # calculate min of left subtree
+                minimum = left_min
+            if left_min > maximum:   # calculate max of left subtree
+                maximum = left_min
+        if self.right:
+            right_min, right_max = self.left.min_max()
+            if right_min < minimum:  # calculate min of right subtree
+                minimum = right_min
+            if right_min > maximum:   # calculate max of right subtree
+                maximum = right_min
+        return minimum, maximum
+
 
 bst = BinarySearchTree(25)
 bst.insert_node(BinarySearchTree(15))
@@ -75,5 +99,9 @@ print()
 bst.postorder_traversal()
 print()
 bst.search_node(20)
+print()
+print(bst.count_nodes())
+print()
+print(bst.min_max())
 
 
