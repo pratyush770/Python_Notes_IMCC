@@ -69,21 +69,59 @@ class BinarySearchTree:
             count += self.right.count_nodes()
         return count
 
-    def min_max(self):
-        minimum = maximum = self.data
-        if self.left:
-            left_min, left_max = self.left.min_max()
-            if left_min < minimum:   # calculate min of left subtree
-                minimum = left_min
-            if left_min > maximum:   # calculate max of left subtree
-                maximum = left_min
-        if self.right:
-            right_min, right_max = self.left.min_max()
-            if right_min < minimum:  # calculate min of right subtree
-                minimum = right_min
-            if right_min > maximum:   # calculate max of right subtree
-                maximum = right_min
-        return minimum, maximum
+    def min_value(self):
+        if self.left is None:  # we get minimum value
+            print(f"Minimum value in the tree is {self.data}")
+            return
+        else:  # we keep traversing on left side
+            self.left.min_value()
+
+    def max_value(self):
+        if self.right is None:  # we get minimum value
+            print(f"Maximum value in the tree is {self.data}")
+            return
+        else:  # we keep traversing on right side
+            self.right.max_value()
+
+    # def min_max(self):   # alternative for min_max
+    #     minimum = maximum = self.data
+    #     if self.left:
+    #         left_min, left_max = self.left.min_max()
+    #         if left_min < minimum:  # calculate min of left subtree
+    #             minimum = left_min
+    #         if left_min > maximum:  # calculate max of left subtree
+    #             maximum = left_min
+    #     if self.right:
+    #         right_min, right_max = self.left.min_max()
+    #         if right_min < minimum:  # calculate min of right subtree
+    #             minimum = right_min
+    #         if right_min > maximum:  # calculate max of right subtree
+    #             maximum = right_min
+    #     return minimum, maximum
+
+    def get_successor(self):
+        curr = self.right  # will point to the right child node of current node
+        while curr is not None and curr.left is not None:
+            curr = curr.left   # will keep incrementing till we get the inorder successor
+        return curr
+
+    def delete_node(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete_node(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete_node(val)
+        else:  # leaf node and node having one child
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.left
+            # when node has two children nodes
+            successor = self.get_successor()
+            self.data = successor.data
+            self.right = self.right.delete_node(successor.data)  # deleting successor node
+        return self
 
 
 bst = BinarySearchTree(25)
@@ -102,6 +140,18 @@ bst.search_node(20)
 print()
 print(bst.count_nodes())
 print()
-print(bst.min_max())
+bst.min_value()
+print()
+bst.max_value()
+# print()
+# print(bst.min_max())
+print()
+print("Before deletion...")
+bst.inorder_traversal()
+print()
+bst.delete_node(30)
+print()
+print("After deletion...")
+bst.inorder_traversal()
 
 
