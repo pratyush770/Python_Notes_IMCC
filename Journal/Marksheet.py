@@ -6,7 +6,7 @@ class Marksheet:
         self.totalMks = 0  # public attribute
         self.percentage = 0
 
-    def calculateMks(self, mathsMks, scienceMks, engMks):   # method to calculate total marks
+    def calculateMarks(self, mathsMks, scienceMks, engMks):   # method to calculate total marks
         self.totalMks = mathsMks + scienceMks + engMks
         print(f"The total marks are {self.totalMks}")
 
@@ -23,5 +23,5 @@ student.setScienceMks(int(input("Enter the science marks: ")))
 student.setEngMks(int(input("Enter the english marks: ")))
 
 marks = Marksheet()
-marks.calculateMks(student.getMathsMks(), student.getScienceMks(), student.getEngMks())
+marks.calculateMarks(student.getMathsMks(), student.getScienceMks(), student.getEngMks())
 marks.calculatePercentage()
