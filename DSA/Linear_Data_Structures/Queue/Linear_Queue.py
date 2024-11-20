@@ -21,8 +21,8 @@ class LinearQueue:
         print()
 
     def dequeue(self):  # for deleting node in queue
-        if self.rear is not None:
-            temp = self.front
+        temp = self.front
+        if self.rear:
             print(f"The deleted node is {temp.data}")
             self.front = self.front.next
             if self.front is None:  # for deleting last node in queue
