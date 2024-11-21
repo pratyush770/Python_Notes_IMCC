@@ -58,9 +58,9 @@ class SinglyCircularLinkedList:
                     break
                 prev = temp
                 temp = temp.next  # go to the next element
-                if temp == self.head:  # element not found in the singly circular linked list
-                    print("Node is not present in the singly linked list")
-                    return
+            if temp == self.head:  # element not found in the singly circular linked list
+                print("Node is not present in the singly linked list")
+                return
             if temp:
                 prev.next = temp.next  # create link between previous and next node
 
@@ -96,7 +96,7 @@ print()
 ll.insert(n.Node(15), 2)
 ll.print()
 print()
-ll.delete(10)
+ll.delete(15)
 ll.print()
 # print()
 # ll.reverse()

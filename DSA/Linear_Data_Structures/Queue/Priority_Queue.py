@@ -10,11 +10,8 @@ class PriorityQueue:
         self.front = self.rear = None
 
     def enqueue(self, new_node):  # for inserting node in queue
-        if self.front is None:
-            self.front = self.rear = new_node
-            return
+        temp = self.front
         if self.rear:
-            temp = self.front
             if self.front.priority > new_node.priority:  # for 1st position
                 new_node.next = self.front
                 self.front = new_node
@@ -38,8 +35,8 @@ class PriorityQueue:
         print()
 
     def dequeue(self):  # for deleting node in queue
-        if self.rear is not None:
-            temp = self.front
+        temp = self.front
+        if self.rear:
             print(f"The deleted node is {temp.data}")
             self.front = self.front.next
             if self.front is None:  # for deleting last node in queue

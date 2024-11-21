@@ -35,7 +35,7 @@ class CircularQueue:
         else:
             self.front = self.front.next
             self.rear.next = self.front  # rear points to update front
-        del temp
+            del temp
 
 
 q1 = CircularQueue()

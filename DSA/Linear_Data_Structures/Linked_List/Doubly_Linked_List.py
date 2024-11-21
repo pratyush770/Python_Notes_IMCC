@@ -49,12 +49,12 @@ class DoublyLinkedList:
                 if temp.data == value:  # if node is found
                     break
                 temp = temp.next  # go to the next element
-                if temp is None:  # element not found in the doubly linked list
-                    print("Node is not present in the doubly linked list")
-                    return
-                temp.prev.next = temp.next  # create link between previous and next node
-                if temp.next:  # will work only for position 2 till second last node and will skip the last node
-                    temp.next.prev = temp
+            if temp is None:  # element not found in the doubly linked list
+                print("Node is not present in the doubly linked list")
+                return
+            temp.prev.next = temp.next  # create link between previous and next node
+            if temp.next:  # will work only for position 2 till second last node and will skip the last node
+                temp.next.prev = temp
 
     def print(self):  # method to print elements of doubly linked list
         temp = self.head
@@ -93,7 +93,7 @@ ll.insert(n.Node(15), 2)
 ll.print()
 print()
 print()
-ll.delete(15)
+ll.delete(30)
 ll.print()
 print()
 print()

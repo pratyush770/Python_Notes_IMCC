@@ -37,9 +37,10 @@ class DeQueue:
             else:  # for deleting node from rear
                 while temp.next != self.rear:  # find last node
                     temp = temp.next
+                print(f"The deleted node is {self.rear.data}")
                 temp.next = self.rear.next
                 self.rear = temp
-            del temp
+                del temp
         else:
             print("Queue is empty")
 
@@ -55,3 +56,4 @@ q1.print()
 print()
 q1.dequeue('r')
 q1.print()
+

@@ -44,9 +44,9 @@ class SinglyLinkedList:
                     break
                 prev = temp
                 temp = temp.next  # go to the next element
-                if temp is None:  # element not found in the singly linked list
-                    print("Node is not present in the singly linked list")
-                    return
+            if temp is None:  # element not found in the singly linked list
+                print("Node is not present in the singly linked list")
+                return
             if temp:
                 prev.next = temp.next  # create link between previous and next node
 
@@ -106,7 +106,7 @@ ll.insert(n.Node(15), 2)
 ll.print()
 print()
 print()
-ll.delete(15)
+ll.delete(40)
 ll.print()
 print()
 print()

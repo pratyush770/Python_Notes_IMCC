@@ -25,10 +25,9 @@ class DoublyCircularLinkedList:
         if pos == 1:
             while temp.next != self.head:
                 temp = temp.next
+            temp.next = node_value  # appending new node
             node_value.next = self.head
-            self.head.prev = node_value
             node_value.prev = temp
-            temp.next = node_value
             self.head = node_value  # making new_node as head
         else:
             while temp:
@@ -90,5 +89,5 @@ print()
 ll.insert(n.Node(15), 2)
 ll.print()
 print()
-ll.delete(10)
+ll.delete(15)
 ll.print()
