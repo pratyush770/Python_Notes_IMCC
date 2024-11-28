@@ -36,6 +36,6 @@ while True:
 # printHelloWorld = lambda: print("Hello World")
 # printHelloWorld()
 
-# Can we incorporate exception with lambda
+# Can we incorporate exception with lambda?
 
 
