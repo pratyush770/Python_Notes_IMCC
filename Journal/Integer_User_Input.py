@@ -26,17 +26,18 @@ while True:
     print("4) Division")
     print("5) Exit")
     ch = int(input("Enter your choice: "))  # asks for user's choice
-    if ch == 1:
-        cal.addition(num1, num2)
-    elif ch == 2:
-        cal.subtraction(num1, num2)
-    elif ch == 3:
-        cal.multiplication(num1, num2)
-    elif ch == 4:
-        cal.division(num1, num2)
-    elif ch == 5:
-        break
-    else:
-        print("Please enter a valid input")
+    match ch:
+        case 1:
+            cal.addition(num1, num2)
+        case 2:
+            cal.subtraction(num1, num2)
+        case 3:
+            cal.multiplication(num1, num2)
+        case 4:
+            cal.division(num1, num2)
+        case 5:
+            break
+        case _:
+            print("Please enter a valid input")
 
 
