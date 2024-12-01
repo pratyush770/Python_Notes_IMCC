@@ -121,6 +121,7 @@
 #
 #
 # mylist = [1, 2, 3, 4, 5]  # list holding 5 elements
+# print(f"The list before reversing is {mylist}")  # prints the original list
 # reverseList(mylist)  # call the reverseList method
 
 
