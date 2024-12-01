@@ -14,7 +14,7 @@ while True:
     [1, 2, 3, 4, 5].index(user_inp)  # will throw error if entered some other number
     if user_inp == 1:
         name = input("Enter your name: ")
-        user_table.insert_one({"name" : name})
+        user_table.insert_one({"name": name})
     if user_inp == 2:
         users = user_table.find()
         for u in users:
@@ -22,7 +22,7 @@ while True:
     if user_inp == 3:
         name = input("Enter the name of the user which you want to update: ")
         changed_name = input("Enter the name you want to change: ")
-        user_table.update_one({"name": name}, {'$set':{'name':changed_name}})
+        user_table.update_one({"name": name}, {'$set': {'name': changed_name}})
     if user_inp == 4:
         name = input("Enter the name of the user which you want to delete: ")
         user_table.delete_one({'name': name})
