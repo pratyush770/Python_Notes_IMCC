@@ -5,6 +5,13 @@ class student:  # class creation
         self.phone = phone
 
     def printValues(self):  # method to print the values
-        print(f"The name of the student is {self.name}")
-        print(f"The age of the student is {self.age}")
-        print(f"The phone number of the student is {self.phone}")
+        print(self.name)
+        print(self.age)
+        print(self.phone)
+
+
+name = input("Enter the name of the student: ")  # takes user input
+age = int(input("Enter the age of the student: "))
+phone = int(input("Enter the phone number of the student: "))
+stud = student(name, age, phone)  # object creation
+stud.printValues()  # function call

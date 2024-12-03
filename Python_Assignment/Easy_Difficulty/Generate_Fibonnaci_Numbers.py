@@ -1,6 +1,7 @@
 class generate_Fibonnaci_Numbers:
     def __init__(self, n):
         self.n = n
+
     def printFibonnaciNumbers(self):  # function to print the first 10 Fibonacci numbers
         n1 = 0  # n1 variable initialized to 0
         n2 = 1  # n1 variable initialized to 1
@@ -10,3 +11,9 @@ class generate_Fibonnaci_Numbers:
             print(n3, end=" ")
             n1 = n2
             n2 = n3
+
+
+n = int(input("Enter the limit: "))  # takes user input
+fibo = generate_Fibonnaci_Numbers(n)  # object creation
+fibo.printFibonnaciNumbers()  # function call
+
