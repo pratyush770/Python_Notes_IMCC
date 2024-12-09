@@ -34,6 +34,39 @@ class Stack:
             temp = temp.next  # traverse the elements
         st1.print()   # print the new reversed stack
 
+    def next_greatest_element(self):
+        mylist = []
+        temp = self.top
+        while temp:
+            mylist.append(temp.data)
+            temp = temp.next  # traverse the elements
+        mylist.sort(reverse=True)
+        return mylist[1]
+
+    def sort_stack(self):
+        mylist = []
+        temp = self.top
+        while temp:
+            mylist.append(temp.data)
+            temp = temp.next  # Traverse the elements
+        mylist.sort(reverse=True)
+        sorted_stack = Stack()
+        for item in mylist:
+            sorted_stack.push(n.Node(item))  # Create a new node for each item
+        return sorted_stack.print()
+
+    def is_empty(self):
+        if self.top is None:
+            print("Stack is empty")
+        else:
+            print("Stack is not empty")
+
+    def reverse_string(self, str):
+        st1 = Stack()
+        for s in str:
+            st1.push(n.Node(s))
+        return st1.print()
+
 
 st = Stack()
 n1 = n.Node(10)
@@ -46,12 +79,15 @@ st.push(n3)
 st.push(n4)
 st.print()
 print()
+print(st.next_greatest_element())
+st.sort_stack()
 print()
 st.pop()
 st.print()
 print()
-print()
 st.reverse()
 print()
+st.is_empty()
+st.reverse_string("Pratyush")
 
 
