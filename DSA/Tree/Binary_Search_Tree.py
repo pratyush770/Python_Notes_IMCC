@@ -45,18 +45,21 @@ class BinarySearchTree:
         print(self.data, end=' ')
 
     def search_node(self, val):
+        level = 1
         if self.data == val:  # if node exists in the tree
             print(f"{val} exists")
-            return
+            return level
         elif val < self.data:  # for left child
             if self.left:  # move to left side of tree
-                self.left.search_node(val)
+                level += self.left.search_node(val)
+                return level
             else:
                 print(f"{val} does not exist")
                 return
         else:   # for right child
             if self.right:  # move to right side of tree
-                self.right.search_node(val)
+                level += self.right.search_node(val)
+                return level
             else:
                 print(f"{val} does not exist")
                 return
@@ -67,6 +70,12 @@ class BinarySearchTree:
             count += self.left.count_nodes()  # increment count every time new function is called
         if self.right:
             count += self.right.count_nodes()
+        return count
+
+    def count_nodes_right(self):
+        count = 1
+        if self.right:
+            count += self.right.count_nodes_right()  # increment count every time new function is called
         return count
 
     def min_value(self):
@@ -136,9 +145,11 @@ bst.preorder_traversal()
 print()
 bst.postorder_traversal()
 print()
-bst.search_node(20)
+print(bst.search_node(25))
 print()
 print(bst.count_nodes())
+print()
+print(bst.count_nodes_right())
 print()
 bst.min_value()
 print()
