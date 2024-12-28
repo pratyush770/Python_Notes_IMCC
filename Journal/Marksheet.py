@@ -1,6 +1,5 @@
 from Student import Student
 
-
 class Marksheet:
     def __init__(self):
         self.totalMks = 0  # public attribute

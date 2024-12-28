@@ -12,3 +12,7 @@ class calculateAreaRect:
         return self._area  # returns the area of the rectangle
 
 
+length = int(input("Enter the length of the rectangle: "))   # takes input from the user
+width = int(input("Enter the width of the rectangle: "))
+rec = calculateAreaRect(length, width)
+print(f"The area of the rectangle is {rec.getArea()}")
